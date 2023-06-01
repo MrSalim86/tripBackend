@@ -1,27 +1,42 @@
 package dtos;
 
+import entities.Trip;
+
 import java.sql.Time;
 import java.util.Date;
+import java.util.List;
 
 public class TripDTO {
 
+    private Long id;
     private String name;
     private Date date;
     private Time time;
     private String location;
     private String duration;
     private String packing_list;
+    private int activ;
 
     public TripDTO() {
     }
 
-    public TripDTO(String name, Date date, Time time, String location, String duration, String packing_list) {
+    public TripDTO(long id,String name, Date date, Time time, String location, String duration, String packing_list, int activ) {
+        this.id = id;
         this.name = name;
         this.date = date;
         this.time = time;
         this.location = location;
         this.duration = duration;
         this.packing_list = packing_list;
+        this.activ = activ;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -72,6 +87,14 @@ public class TripDTO {
         this.packing_list = packing_list;
     }
 
+    public int getActiv() {
+        return activ;
+    }
+
+    public void setActiv(int activ) {
+        this.activ = activ;
+    }
+
     @Override
     public String toString() {
         return "TripDTO{" +
@@ -81,6 +104,7 @@ public class TripDTO {
                 ", location='" + location + '\'' +
                 ", duration='" + duration + '\'' +
                 ", packing_list='" + packing_list + '\'' +
+                ", activ=" + activ +
                 '}';
     }
 }
