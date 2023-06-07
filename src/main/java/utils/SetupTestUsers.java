@@ -2,7 +2,6 @@ package utils;
 
 
 import entities.Role;
-import entities.Trip;
 import entities.User;
 
 import javax.persistence.EntityManager;

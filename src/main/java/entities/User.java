@@ -21,11 +21,6 @@ public class User implements Serializable {
     @Column(name = "user_name", length = 25)
     private String userName;
 
-    @OneToOne
-    @JoinColumn(name = "account_id")
-    private Account account;
-
-
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 255)
@@ -36,6 +31,9 @@ public class User implements Serializable {
             @JoinColumn(name = "role_name", referencedColumnName = "role_name")})
     @ManyToMany
     private List<Role> roleList = new ArrayList<>();
+
+    @OneToOne(mappedBy = "user")
+    private Account account;
 
 
     public List<String> getRolesAsStrings() {

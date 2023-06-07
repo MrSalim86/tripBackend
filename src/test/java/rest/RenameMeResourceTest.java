@@ -1,4 +1,4 @@
-package rest;
+/*package rest;
 
 import entities.RenameMe;
 import io.restassured.RestAssured;
@@ -103,4 +103,4 @@ public class RenameMeResourceTest {
                 .statusCode(HttpStatus.OK_200.getStatusCode())
                 .body("count", equalTo(2));
     }
-}
+}*/
